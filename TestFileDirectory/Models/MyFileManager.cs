@@ -100,8 +100,7 @@ namespace TestFileDirectory.Models
                 Directory.GetFiles(path);
                 Directory.GetDirectories(path);
             }
-            catch (UnauthorizedAccessException)
-            { return false; }
+            catch (UnauthorizedAccessException) { return false; }
             catch (DirectoryNotFoundException) { return false; }
             return true;
         }
