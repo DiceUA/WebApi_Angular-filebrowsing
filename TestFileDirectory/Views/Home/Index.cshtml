@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;    
+}
+
+<!DOCTYPE html>
+
+<html ng-app="ManagerApp" ng-controller="ManagerController as manager">
+<head>
+    <meta name="viewport" content="width=device-width" />   
+    <script src="~/Scripts/ManagerApp.js"> </script>
+    <title ng-bind="helloAngular"></title>
+    <link href="~/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main"> 
+
+        <table class="brd" >
+            <tr>
+                <th>Less 10mb</th>
+                <th>10-50</th>
+                <th>More 100mb</th>
+            </tr>
+            <tr>
+                <td ng-bind="lessThan10">1000</td>
+                <td ng-bind="from10to50">111</td>
+                <td ng-bind="moreThan100">1</td>
+            </tr>
+        </table>
+        <p><strong>Current path:</strong> <span ng-bind="currentPath"></span></p>        
+        <div class="files">            
+            <ul>
+                <li ng-repeat="x in myData">
+                    <a href="#" ng-click="selectDirectory(x)">{{ x.Name }}</a>
+                </li>
+            </ul>
+            @*<ul>
+                <li ng-repeat="folder in directories">
+                    <a href="" ng-click="selectFolder(folder.Path)">{{ folder.Name }}</a>
+                </li>
+                <li ng-repeat="file in files">
+                    <a href="" >{{ file.Name }}</a>
+                </li>
+            </ul>*@
+        </div>   
+    </div>
+</body>
+</html>
